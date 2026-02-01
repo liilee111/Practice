@@ -27,6 +27,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          ls -la package.json package-lock.json || true
+          head -n 5 package-lock.json || true
+          
       - name: Install dependencies
         run: npm ci
 
